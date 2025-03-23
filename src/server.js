@@ -7,17 +7,6 @@ const start = async () => {
     });
 
     routes.forEach(route => server.route(route));
-    
-    // server.route({
-    //     method: 'POST',
-    //     path: '/hello',
-    //     handler: (req, h) => {
-    //         const payload = req.payload;
-    //         const name = payload.name;
-    //         return `Hello ${name}`;
-    //     }
-    // });
-    //http://localhost:8000/hello
 
     await server.start();
     console.log('Server is running.')
