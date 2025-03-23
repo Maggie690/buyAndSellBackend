@@ -6,6 +6,16 @@ const start = async () => {
         host: 'localhost',
     });
 
+    server.route({
+        method: 'POST',
+        path: '/hello',
+        handler: (req, h) => {
+            const payload = req.payload;
+            const name = payload.name;
+            return `Hello ${name}`;
+        }
+    });
+
     await server.start();
     console.log('Server is running.')
 }
